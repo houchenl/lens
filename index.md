@@ -2,7 +2,6 @@
 layout: home
 
 hero:
-  name: 后尘
   text: 思考 · 系统 · 技术
   tagline: 为学日益，为道日损
   actions:
