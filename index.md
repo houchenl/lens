@@ -22,9 +22,4 @@ features:
 
 ## 近期笔记
 
-<div class="recent">
-
-- [道法势术器：一个理解世界的五层框架](/think/dao-fa-shi-shu-qi)
-  <span class="desc">道是天定规律，法是人定规则，势是能量惯性，术是得势之策，器是可用之资——从道到器，变化越来越快；从器到道，抽象越来越强。</span>
-
-</div>
+<RecentNotes />

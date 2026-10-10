@@ -1,4 +1,11 @@
 import { defineConfig } from 'vitepress'
+import { SECTIONS, getPosts, sidebarFor } from './utils/posts'
+
+// 各栏目的导航入口指向该栏目最新的文章
+const navSections = SECTIONS.map(({ dir, text }) => {
+  const latest = getPosts().find((p) => p.dir === dir)
+  return latest ? { text, link: latest.link } : null
+})
 
 export default defineConfig({
   lang: 'zh-CN',
@@ -9,36 +16,12 @@ export default defineConfig({
   lastUpdated: true,
 
   themeConfig: {
-    nav: [
-      { text: '首页', link: '/' },
-      { text: '思考', link: '/think/dao-fa-shi-shu-qi' },
-      { text: '系统', link: '/system/hello' },
-      { text: 'AI-Infra', link: '/ai-infra/hello' },
-    ],
+    nav: [{ text: '首页', link: '/' }, ...navSections.filter((s) => s !== null)],
 
-    sidebar: {
-      '/think/': [
-        {
-          text: '思考',
-          items: [
-            { text: '道法势术器：一个理解世界的五层框架', link: '/think/dao-fa-shi-shu-qi' },
-            { text: '你好，手记', link: '/think/hello' },
-          ],
-        },
-      ],
-      '/system/': [
-        {
-          text: '系统',
-          items: [{ text: '你好，系统', link: '/system/hello' }],
-        },
-      ],
-      '/ai-infra/': [
-        {
-          text: 'AI-Infra',
-          items: [{ text: '你好，AI-Infra', link: '/ai-infra/hello' }],
-        },
-      ],
-    },
+    // 侧边栏由 .vitepress/utils/posts.ts 扫描目录自动生成
+    sidebar: Object.fromEntries(
+      SECTIONS.map(({ dir, text }) => [`/${dir}/`, sidebarFor(dir, text)]),
+    ),
 
     socialLinks: [{ icon: 'github', link: 'https://github.com/houchenl/lens' }],
 
