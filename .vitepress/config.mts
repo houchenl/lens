@@ -11,14 +11,17 @@ export default defineConfig({
   themeConfig: {
     nav: [
       { text: '首页', link: '/' },
-      { text: '思考', link: '/think/hello' },
+      { text: '思考', link: '/think/dao-fa-shi-shu-qi' },
     ],
 
     sidebar: {
       '/think/': [
         {
           text: '思考',
-          items: [{ text: '你好，手记', link: '/think/hello' }],
+          items: [
+            { text: '道法势术器：一个理解世界的五层框架', link: '/think/dao-fa-shi-shu-qi' },
+            { text: '你好，手记', link: '/think/hello' },
+          ],
         },
       ],
     },
