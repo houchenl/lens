@@ -4,13 +4,6 @@ layout: home
 hero:
   text: 思考 · 系统 · 技术
   tagline: 为学日益，为道日损
-  actions:
-    - theme: brand
-      text: 最新文章
-      link: /think/dao-fa-shi-shu-qi
-    - theme: alt
-      text: GitHub
-      link: https://github.com/houchenl/lens
 
 features:
   - title: 思考
