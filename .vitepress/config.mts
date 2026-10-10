@@ -13,7 +13,7 @@ export default defineConfig({
       { text: '首页', link: '/' },
       { text: '思考', link: '/think/dao-fa-shi-shu-qi' },
       { text: '系统', link: '/system/hello' },
-      { text: '技术', link: '/tech/hello' },
+      { text: 'AI-Infra', link: '/ai-infra/hello' },
     ],
 
     sidebar: {
@@ -32,10 +32,10 @@ export default defineConfig({
           items: [{ text: '你好，系统', link: '/system/hello' }],
         },
       ],
-      '/tech/': [
+      '/ai-infra/': [
         {
-          text: '技术',
-          items: [{ text: '你好，技术', link: '/tech/hello' }],
+          text: 'AI-Infra',
+          items: [{ text: '你好，AI-Infra', link: '/ai-infra/hello' }],
         },
       ],
     },

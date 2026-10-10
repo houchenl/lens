@@ -2,7 +2,7 @@
 layout: home
 
 hero:
-  text: 思考 · 系统 · 技术
+  text: 思考 · 系统 · AI-Infra
   tagline: 为学日益，为道日损
 
 features:
@@ -14,8 +14,8 @@ features:
     details: 复杂系统如何运作、架构如何设计、秩序如何涌现。
     link: /system/hello
     linkText: 进入栏目
-  - title: 技术
-    details: 工程实践的记录与复盘：方法、性能、工具与经验。
-    link: /tech/hello
+  - title: AI-Infra
+    details: AI 基础设施的工程实践：训练与推理系统、性能优化、软硬件协同。
+    link: /ai-infra/hello
     linkText: 进入栏目
 ---
