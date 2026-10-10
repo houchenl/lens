@@ -24,28 +24,27 @@
 /* ---------- Hero ---------- */
 
 .VPHero .text {
-  max-width: 640px;
-  font-size: 56px;
-  line-height: 1.25;
+  max-width: 100%;
+  white-space: nowrap;
+  font-size: 32px;
+  line-height: 1.4;
   font-weight: 700;
-  letter-spacing: 0.08em;
-  background: linear-gradient(120deg, var(--vp-c-brand-1) 30%, var(--vp-c-brand-3));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  letter-spacing: 0.05em;
+  color: var(--vp-c-text-1);
 }
 
 .VPHero .tagline {
   max-width: 640px;
-  font-size: 20px;
-  letter-spacing: 0.3em;
-  color: var(--vp-c-text-2);
-  padding-top: 16px;
+  font-size: 18px;
+  letter-spacing: 0.25em;
+  color: var(--vp-c-text-1);
+  opacity: 0.75;
+  padding-top: 12px;
 }
 
 @media (min-width: 960px) {
   .VPHero .text {
-    font-size: 64px;
+    font-size: 36px;
   }
 }
 
@@ -64,19 +63,6 @@
   box-shadow: 0 12px 32px -12px var(--vp-c-brand-soft);
 }
 
-.VPFeatures .VPFeature .icon {
-  font-size: 22px;
-  font-weight: 600;
-  color: var(--vp-c-brand-1);
-  background-color: var(--vp-c-brand-soft);
-  width: 48px;
-  height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 12px;
-}
-
 .VPFeatures .VPFeature .title {
   letter-spacing: 0.05em;
 }
@@ -88,7 +74,7 @@
 /* ---------- 首页正文（近期笔记） ---------- */
 
 .VPHome .vp-doc h2 {
-  margin: 0 0 24px;
+  margin: 72px 0 8px;
   border-top: none;
   padding-top: 0;
   letter-spacing: 0.1em;
