@@ -12,6 +12,8 @@ export default defineConfig({
     nav: [
       { text: '首页', link: '/' },
       { text: '思考', link: '/think/dao-fa-shi-shu-qi' },
+      { text: '系统', link: '/system/hello' },
+      { text: '技术', link: '/tech/hello' },
     ],
 
     sidebar: {
@@ -22,6 +24,18 @@ export default defineConfig({
             { text: '道法势术器：一个理解世界的五层框架', link: '/think/dao-fa-shi-shu-qi' },
             { text: '你好，手记', link: '/think/hello' },
           ],
+        },
+      ],
+      '/system/': [
+        {
+          text: '系统',
+          items: [{ text: '你好，系统', link: '/system/hello' }],
+        },
+      ],
+      '/tech/': [
+        {
+          text: '技术',
+          items: [{ text: '你好，技术', link: '/tech/hello' }],
         },
       ],
     },
