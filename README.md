@@ -1,4 +1,4 @@
-# lens · 思考手记
+# lens · 后尘
 
 - 站点：基于 VitePress，`npm install && npm run dev` 本地预览，`npm run build` 构建。
 

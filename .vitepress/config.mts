@@ -2,8 +2,8 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   lang: 'zh-CN',
-  title: '思考手记',
-  description: '思考 · 系统 · 技术',
+  title: '后尘',
+  description: '为学日益，为道日损',
   base: '/lens/',
   cleanUrls: true,
   lastUpdated: true,

@@ -2,9 +2,9 @@
 layout: home
 
 hero:
-  name: 思考手记
+  name: 后尘
   text: 思考 · 系统 · 技术
-  tagline: 把想清楚的写下来——关于世界的规律、系统的结构与技术的本质。
+  tagline: 为学日益，为道日损
   actions:
     - theme: brand
       text: 最新文章
