@@ -15,6 +15,10 @@ export default defineConfig({
   cleanUrls: true,
   lastUpdated: true,
 
+  markdown: {
+    math: true,
+  },
+
   themeConfig: {
     nav: [{ text: '首页', link: '/' }, ...navSections.filter((s) => s !== null)],
 
