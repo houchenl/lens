@@ -39,31 +39,31 @@
   font-family:
     -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB',
     'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 17px;
+  font-size: 16px;
 }
 
 .vp-doc p,
 .vp-doc li,
 .vp-doc td,
 .vp-doc th {
-  font-size: 17px;
-  line-height: 1.85;
+  font-size: 16px;
+  line-height: 1.6;
   letter-spacing: 0.02em;
-  color: #363636;
+  color: #1f2328;
 }
 
 .dark .vp-doc p,
 .dark .vp-doc li,
 .dark .vp-doc td,
 .dark .vp-doc th {
-  color: rgba(255, 255, 255, 0.85);
+  color: #f0f6fc;
 }
 
 .vp-doc h1,
 .vp-doc h2,
 .vp-doc h3,
 .vp-doc h4 {
-  color: #111111;
+  color: #1f2328;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
@@ -72,7 +72,7 @@
 .dark .vp-doc h2,
 .dark .vp-doc h3,
 .dark .vp-doc h4 {
-  color: rgba(255, 255, 255, 0.95);
+  color: #f0f6fc;
 }
 
 .vp-doc p {
@@ -89,12 +89,12 @@
 }
 
 .vp-doc strong {
-  color: #111111;
+  color: #1f2328;
   font-weight: 600;
 }
 
 .dark .vp-doc strong {
-  color: rgba(255, 255, 255, 0.95);
+  color: #f0f6fc;
 }
 
 /* 吸顶导航栏底部分隔线（对齐 GitHub：1px solid #d1d9e0） */
