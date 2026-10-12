@@ -19,6 +19,9 @@
   --vp-c-bg: #ffffff;
   --vp-c-bg-alt: #fafafa;
   --vp-c-bg-soft: #fafafa;
+
+  /* 吸顶导航栏背景 */
+  --vp-nav-bg-color: rgb(246, 248, 250);
 }
 
 .dark {
@@ -92,6 +95,15 @@
 
 .dark .vp-doc strong {
   color: rgba(255, 255, 255, 0.95);
+}
+
+/* 吸顶导航栏底部分隔线（对齐 GitHub：1px solid #d1d9e0） */
+.VPNavBar {
+  border-bottom: 1px solid #d1d9e0;
+}
+
+.dark .VPNavBar {
+  border-bottom-color: #3d444d;
 }
 
 /* ---------- Hero ---------- */
