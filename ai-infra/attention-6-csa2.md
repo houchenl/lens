@@ -195,6 +195,8 @@ Reindex 为更深层提供调整选择的机会，Reuse 则接受近期选择的
 
 CSA2 因而同时改变三条路径：简化单层历史写入，减少多层历史副本，减少多层重复选择。下一篇将把这些层放回 **V4.1 的因果编码器—解码器与层次化索引器**，解释全局历史由哪里产生，以及剩余索引器如何避免反复全范围搜索。
 
+继续阅读：[注意力机制-7 DeepSeek-V4.1](/ai-infra/attention-7-deepseek-v41)。
+
 ## 参考资料
 
 1. DeepSeek-AI，[DeepSeek-V4.1-Flash: Pushing the Limits of KV Cache Compression](https://arxiv.org/abs/2609.19969)，2026。重点见 §2.3.1、§3.1.2、§4.2.1。
