@@ -190,6 +190,8 @@ $$
 
 接下来还可以追问：一个头的所有 key 特征是否必须以相同速度遗忘？下一篇 **KDA：从 Kimi Linear 到 Kimi-K3** 将把标量遗忘扩展到更细的维度，并分析它与全局 MLA 的混合方式。
 
+继续阅读：[注意力机制-15 KDA 与 Kimi 的混合注意力](/ai-infra/attention-15-kda)。
+
 ## 参考资料
 
 1. Schlag et al.，[Linear Transformers Are Secretly Fast Weight Programmers](https://proceedings.mlr.press/v139/schlag21a.html)，2021。用于理解外积记忆、局部学习与 Delta 写入。
