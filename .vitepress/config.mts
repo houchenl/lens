@@ -14,6 +14,8 @@ export default defineConfig({
   base: '/lens/',
   cleanUrls: true,
   lastUpdated: true,
+  // 仓库维护文档独立于公开博客页面
+  srcExclude: ['AGENTS.md', 'README.md', 'docs/**'],
 
   markdown: {
     math: true,

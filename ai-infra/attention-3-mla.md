@@ -404,6 +404,8 @@ $$
 
 理解这条链，再读推理引擎中的 MLA prefill/decode 后端、缓存布局和专用 kernel，就能分清哪些步骤由模型结构决定，哪些是实现对显存、计算与通信的取舍。
 
+下一篇 [DSA](/ai-infra/attention-4-dsa)继续讨论：压缩每个历史位置的表示之后，如何用轻量索引器减少主注意力实际访问的位置，以及如何跨层复用筛选结果。
+
 ## 参考资料
 
 1. DeepSeek-AI, [DeepSeek-V2: A Strong, Economical, and Efficient Mixture-of-Experts Language Model](https://arxiv.org/abs/2405.04434), 2024。重点见 §2.1 与附录 C。

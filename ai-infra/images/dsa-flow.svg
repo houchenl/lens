@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1160" height="700" viewBox="0 0 1160 700" role="img" aria-labelledby="title desc">
+  <title id="title">DSA 的索引路径与主注意力路径</title>
+  <desc id="desc">当前查询进入轻量索引器，扫描历史索引 key 并选出 Top-K 位置；主注意力用自己的 query 读取这些位置的主 KV，执行 softmax 和聚合。两种历史缓存分开保存。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#475569"/></marker>
+    <style>
+      text { font-family: "Microsoft YaHei", "PingFang SC", sans-serif; fill: #0f172a; }
+      .title { font-size: 27px; font-weight: 700; }
+      .label { font-size: 22px; font-weight: 600; }
+      .note { font-size: 19px; fill: #475569; }
+      .arrow { fill: none; stroke: #475569; stroke-width: 2.5; marker-end: url(#arrow); }
+      .box { stroke-width: 1.5; rx: 14; }
+    </style>
+  </defs>
+  <rect width="1160" height="700" rx="20" fill="#f8fafc"/>
+  <text x="40" y="53" class="title">DSA：用轻量筛选减少主注意力访问</text>
+  <rect x="30" y="83" width="1100" height="230" rx="18" fill="#eff6ff" stroke="#bfdbfe"/>
+  <rect x="30" y="335" width="1100" height="250" rx="18" fill="#f0fdf4" stroke="#bbf7d0"/>
+  <text x="53" y="116" class="note">索引路径 · 扫描全部合法历史索引 key</text>
+  <text x="53" y="369" class="note">主注意力路径 · 访问选中位置的主 KV</text>
+  <rect x="58" y="170" width="175" height="80" class="box" fill="#fff" stroke="#94a3b8"/>
+  <text x="145" y="203" text-anchor="middle" class="label">当前查询特征</text>
+  <text x="145" y="230" text-anchor="middle" class="note">隐藏状态 / query</text>
+  <rect x="285" y="154" width="228" height="112" class="box" fill="#dbeafe" stroke="#60a5fa"/>
+  <text x="399" y="191" text-anchor="middle" class="label">Lightning Indexer</text>
+  <text x="399" y="222" text-anchor="middle" class="note">轻量打分 → Top-K</text>
+  <text x="399" y="246" text-anchor="middle" class="note">输出位置，不输出 V 聚合</text>
+  <rect x="582" y="166" width="210" height="88" class="box" fill="#fff" stroke="#60a5fa"/>
+  <text x="687" y="201" text-anchor="middle" class="label">选中的位置集合</text>
+  <text x="687" y="233" text-anchor="middle" class="note">例如 {2, 3, 8, …}</text>
+  <rect x="855" y="154" width="245" height="112" class="box" fill="#fff" stroke="#60a5fa"/>
+  <text x="977" y="194" text-anchor="middle" class="label">历史索引 key 缓存</text>
+  <text x="977" y="227" text-anchor="middle" class="note">较窄的共享 key + 元数据</text>
+  <path d="M233 210H281" class="arrow"/>
+  <path d="M513 210H578" class="arrow"/>
+  <path d="M855 161V133H399V150" class="arrow"/>
+  <rect x="58" y="431" width="175" height="85" class="box" fill="#fff" stroke="#94a3b8"/>
+  <text x="145" y="467" text-anchor="middle" class="label">主注意力 query</text>
+  <text x="145" y="497" text-anchor="middle" class="note">各主头独立计算</text>
+  <rect x="285" y="414" width="228" height="118" class="box" fill="#dcfce7" stroke="#4ade80"/>
+  <text x="399" y="451" text-anchor="middle" class="label">稀疏主注意力</text>
+  <text x="399" y="482" text-anchor="middle" class="note">重新打分 → softmax</text>
+  <text x="399" y="509" text-anchor="middle" class="note">按选中位置聚合 V</text>
+  <rect x="582" y="431" width="210" height="85" class="box" fill="#fff" stroke="#4ade80"/>
+  <text x="687" y="467" text-anchor="middle" class="label">注意力输出</text>
+  <text x="687" y="497" text-anchor="middle" class="note">多头输出投影</text>
+  <rect x="855" y="414" width="245" height="118" class="box" fill="#fff" stroke="#4ade80"/>
+  <text x="977" y="453" text-anchor="middle" class="label">历史主 KV 缓存</text>
+  <text x="977" y="485" text-anchor="middle" class="note">MLA 潜在向量 + 位置 key</text>
+  <text x="977" y="512" text-anchor="middle" class="note">只读取本次选中的位置</text>
+  <path d="M145 250V427" class="arrow"/>
+  <path d="M233 473H281" class="arrow"/>
+  <path d="M513 473H578" class="arrow"/>
+  <path d="M687 254V390H399V410" class="arrow"/>
+  <path d="M977 532V557H399V536" class="arrow"/>
+  <text x="580" y="627" text-anchor="middle" class="label">共享筛选位置；索引打分与主注意力权重分别计算</text>
+  <text x="580" y="663" text-anchor="middle" class="note">未选中的历史位置仍可被未来查询选中，基础 DSA 不自动删除历史 KV。</text>
+</svg>

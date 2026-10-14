@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1160" height="850" viewBox="0 0 1160 850" role="img" aria-labelledby="title desc">
+  <title id="title">CSA 与 HCA 如何组织八个 token 的历史</title>
+  <desc id="desc">示例压缩步长分别为二和四。CSA 产生四条重叠记录，查询七选择其中零和二；HCA 产生两条非重叠记录并全部读取。两种层都保留最近两个 token，局部和全局条目进入同一次 softmax。两种层分别执行，并非将 CSA 与 HCA 输出合并。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#475569"/></marker>
+    <style>
+      text { font-family: 'Microsoft YaHei', 'Noto Sans CJK SC', sans-serif; fill: #1e293b; font-size: 18px; }
+      .title { font-size: 28px; font-weight: 700; }
+      .label { font-size: 20px; font-weight: 700; }
+      .muted { fill: #475569; font-size: 17px; }
+      .light { fill: #fff; font-weight: 700; }
+      .center { text-anchor: middle; dominant-baseline: middle; }
+      .line { stroke: #475569; stroke-width: 2; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+  <rect width="1160" height="850" rx="16" fill="#f8fafc"/>
+  <text x="30" y="46" class="title">一段历史，两种压缩粒度</text>
+  <text x="30" y="77" class="muted">query 位于 token 7；教学参数 m=2、r=4、K=2、w=2，非真实 V4 配置</text>
+  <text x="36" y="132" class="label">源 token</text>
+  <g fill="#e2e8f0" stroke="#cbd5e1">
+    <rect x="160" y="104" width="56" height="44" rx="8"/><rect x="230" y="104" width="56" height="44" rx="8"/>
+    <rect x="300" y="104" width="56" height="44" rx="8"/><rect x="370" y="104" width="56" height="44" rx="8"/>
+    <rect x="440" y="104" width="56" height="44" rx="8"/><rect x="510" y="104" width="56" height="44" rx="8"/>
+    <rect x="580" y="104" width="56" height="44" rx="8"/><rect x="650" y="104" width="56" height="44" rx="8"/>
+  </g>
+  <g class="center"><text x="188" y="126">0</text><text x="258" y="126">1</text><text x="328" y="126">2</text><text x="398" y="126">3</text><text x="468" y="126">4</text><text x="538" y="126">5</text><text x="608" y="126">6</text><text x="678" y="126">7</text></g>
+  <rect x="24" y="170" width="1112" height="310" rx="12" fill="#eff6ff" stroke="#bfdbfe"/>
+  <text x="44" y="202" class="label">CSA：步长 2，通常覆盖 4 个来源位置</text>
+  <g stroke="#cbd5e1" stroke-dasharray="4 5"><path d="M 153 216 V 431"/><path d="M 293 216 V 431"/><path d="M 433 216 V 431"/><path d="M 573 216 V 431"/><path d="M 713 216 V 431"/></g>
+  <g class="label"><text x="58" y="248">C0</text><text x="58" y="300">C1</text><text x="58" y="352">C2</text><text x="58" y="404">C3</text></g>
+  <rect x="160" y="223" width="126" height="38" rx="7" fill="#2563eb"/>
+  <rect x="160" y="275" width="266" height="38" rx="7" fill="#dbeafe" stroke="#93c5fd"/>
+  <rect x="300" y="327" width="266" height="38" rx="7" fill="#2563eb"/>
+  <rect x="440" y="379" width="266" height="38" rx="7" fill="#dbeafe" stroke="#93c5fd"/>
+  <g class="center"><text x="223" y="242" class="light">0—1</text><text x="293" y="294">0—1（前组）+ 2—3</text><text x="433" y="346" class="light">2—3（前组）+ 4—5</text><text x="573" y="398">4—5（前组）+ 6—7</text></g>
+  <text x="160" y="454" class="muted">条目数 = 8 / 2 = 4；蓝色表示本次选中</text>
+  <rect x="778" y="221" width="330" height="199" rx="10" fill="#fff" stroke="#93c5fd"/>
+  <text x="798" y="256" class="label">索引器：4 条 → Top-2</text>
+  <text x="798" y="295">示例选中 C0、C2</text>
+  <text x="798" y="334">主注意力读取这两个摘要</text>
+  <text x="798" y="377" class="muted">不展开回独立 token 的 K/V</text>
+  <path d="M 720 313 H 765" class="line"/>
+  <rect x="24" y="498" width="1112" height="152" rx="12" fill="#ecfdf5" stroke="#a7f3d0"/>
+  <text x="44" y="530" class="label">HCA：步长 4，无重叠</text>
+  <text x="58" y="585" class="label">记录</text>
+  <rect x="160" y="558" width="266" height="42" rx="7" fill="#047857"/>
+  <rect x="440" y="558" width="266" height="42" rx="7" fill="#047857"/>
+  <text x="293" y="579" class="center light">H0：0—3</text><text x="573" y="579" class="center light">H1：4—7</text>
+  <path d="M 720 579 H 765" class="line"/>
+  <text x="792" y="573" class="label">2 条 → 全部读取</text>
+  <text x="792" y="611" class="muted">没有索引器，不做 Top-K</text>
+  <text x="160" y="630" class="muted">条目数 = 8 / 4 = 2</text>
+  <rect x="24" y="670" width="1112" height="155" rx="12" fill="#fff7ed" stroke="#fed7aa"/>
+  <text x="44" y="706" class="label">两种层都保留局部窗口</text>
+  <text x="44" y="745">query 7 的最近两个 token：</text>
+  <rect x="376" y="716" width="56" height="42" rx="7" fill="#ea580c"/><rect x="446" y="716" width="56" height="42" rx="7" fill="#ea580c"/>
+  <text x="404" y="737" class="center light">6</text><text x="474" y="737" class="center light">7</text>
+  <path d="M 522 737 H 602" class="line"/>
+  <text x="624" y="731" class="label">与本层全局条目共同归一化</text>
+  <text x="624" y="768">同一次 softmax，再聚合共享 KV</text>
+  <text x="44" y="802" class="muted">CSA 层与 HCA 层分别执行自己的注意力；两种层在主干中交错部署。</text>
+</svg>
