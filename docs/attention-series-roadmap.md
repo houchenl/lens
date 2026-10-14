@@ -23,6 +23,7 @@
 | 11 | [MiniMax MSA](../ai-infra/attention-11-minimax-msa.md) | 详见文章中的问题、机制与分析 |
 | 12 | [线性注意力](../ai-infra/attention-12-linear-attention.md) | 详见文章中的问题、机制与分析 |
 | 13 | [Lightning Attention](../ai-infra/attention-13-lightning-attention.md) | 详见文章中的问题、机制与分析 |
+| 14 | [DeltaNet 与 Gated DeltaNet](../ai-infra/attention-14-gated-deltanet.md) | 详见文章中的问题、机制与分析 |
 
 “已有稿件”只表示仓库中存在文章，不据此认定已经提交、推送或线上发布。
 
@@ -78,7 +79,7 @@
 
 第 9 篇承接已有的跨层共享知识，第 10、11 篇承接 NSA 的块选择知识。这个阶段讲清“选择和共享历史”的不同方式，随后再引入“把历史写入递归状态”。
 
-- **第 1—13 篇已有稿件，下一篇从第 14 篇开始**，按既定路线推进。
+- **第 1—14 篇已有稿件，下一篇从第 15 篇开始**，按既定路线推进。
 - **第 10 篇**：展开 MoBA（Mixture of Block Attention，混合块注意力）的块表示、内容路由、因果选择与输出计算。区分“论文报告已用于 Kimi 长上下文服务”和“某个公开模型确认内置该模块”。
 - **第 11 篇**：展开 MSA（MiniMax Sparse Attention）的 GQA 组、索引分支、块内打分聚合和主注意力；对照 DSA 与 MoBA 的共享范围和选择粒度。以 M2 系列 GQA 到 M3 的变化交代这一分支；01/M1 的线性混合设计在第 13 篇回顾，不能把整个 MiniMax 家族画成单向继承链。
 

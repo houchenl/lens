@@ -171,6 +171,8 @@ $s_S,s_{KV}$ 分别为状态和 KV 每元素字节数。以 70 个线性层、�
 
 当同一个变量不断更新时，简单叠加会混合新旧值；整体衰减又会同时削弱其他仍然有效的变量。下一篇的 **DeltaNet 与 Gated DeltaNet** 将引入读取误差：先沿 key 读取旧值，再只写入需要修正的部分，进一步加入遗忘门。
 
+继续阅读：[注意力机制-14 DeltaNet 与 Gated DeltaNet](/ai-infra/attention-14-gated-deltanet)。
+
 ## 参考资料
 
 1. MiniMax，[MiniMax-01: Scaling Foundation Models with Lightning Attention](https://arxiv.org/abs/2501.08313)，2025。重点见 §2.2 的模型、分块形式与混合结构。
