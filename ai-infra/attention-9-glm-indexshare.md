@@ -158,6 +158,8 @@ GLM-5.2 官方在 1M 上下文给出 2.9 倍的每 token FLOPs 改善，应保�
 
 GLM 的演进说明，模型设计不仅可以修改相似度函数，也可以修改“谁负责选择、选择服务哪些层”。下一篇讨论 **MoBA**：将选择粒度从 token 转为连续历史块，用块表示完成内容路由，再读取块内细节。
 
+继续阅读：[注意力机制-10 MoBA](/ai-infra/attention-10-moba)。
+
 ## 参考资料
 
 1. Z.ai，[GLM-5 系列官方仓库](https://github.com/zai-org/GLM-5)、[GLM-5.2 发布说明](https://z.ai/blog/glm-5.2)与[GLM-5.3 发布说明](https://z.ai/blog/glm-5.3)。
