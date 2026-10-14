@@ -285,7 +285,7 @@ Shazeer 在 2019 年即验证过这种正交性：MQA 与局部注意力（local
 5. uptraining 配方（mean pooling 初始化 + 5% 算力续训）使存量 MHA 模型得以低成本迁移，是 GQA 论文中同样重要、却较少被提及的贡献；
 6. 这一切的学理基础仍是上一篇的伏笔：**头本来就冗余**——mean pooling 之所以有效，恰因为各头的 K/V 投影本就高度相似。
 
-但无论 g 如何调整，cache 中存储的始终是完整的 K/V，只是数量减少。能否对每份 K/V 本身也进行压缩？2024 年 DeepSeek-V2 的 MLA 给出了回答：将 K/V 联合低秩压缩为潜向量存入 cache，推理时再还原——KV cache 减少 93.3%，质量与 MHA 相当。下一篇讨论 MLA。
+但无论 g 如何调整，cache 中存储的始终是完整的 K/V，只是数量减少。能否对每份 K/V 本身也进行压缩？2024 年 DeepSeek-V2 的 MLA 给出了回答：将 K/V 联合低秩压缩为潜向量存入 cache，通过矩阵吸收避免展开历史 K/V——论文报告相对 DeepSeek 67B 的 KV cache 减少 93.3%。[下一篇讨论 MLA](/ai-infra/attention-3-mla)。
 
 
 ## 参考文献
