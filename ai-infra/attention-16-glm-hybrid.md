@@ -179,9 +179,11 @@ mHC（Manifold-Constrained Hyper-Connections，流形约束超连接）作用于
 
 GLM-5.3-Flash 展示了一种组合：递归状态处理连续上下文，稀疏全局层检索明确历史，IndexPool 再降低检索入口的规模。下一篇将按统一坐标比较本系列的全部路线，整理表示、位置、状态和层间共享的共同取舍。
 
+继续阅读：[注意力机制-17 设计取舍](/ai-infra/attention-17-design-tradeoffs)。
+
 ## 参考资料
 
 1. Z.ai，[GLM-5.3-Flash: Frontier Intelligence, Flash Cost](https://z.ai/blog/glm-5.3-flash)，官方架构介绍。
 2. Z.ai，[GLM-5.3-Flash 配置](https://huggingface.co/zai-org/GLM-5.3-Flash/blob/main/config.json)。重点见 `text_config` 的层型、NoPE、KDA 与 IndexPool 字段。
-3. Hugging Face，[GLM5-Next 模型实现](https://github.com/huggingface/transformers/blob/main/src/transformers/models/glm5_next/modeling_glm5_next.py)与[文档](https://huggingface.co/docs/transformers/model_doc/glm5_next)。用于核对池化门、地址展开和尾部处理。
+3. Hugging Face，[GLM5-Next 模型实现](https://github.com/huggingface/transformers/blob/main/src/transformers/models/glm5_next/modeling_glm5_next.py)与[v5.19.0 文档](https://huggingface.co/docs/transformers/v5.19.0/model_doc/glm5_next)。用于核对池化门、地址展开和尾部处理；模型数值以实际 checkpoint 配置为准。
 4. Z.ai，[GLM-5 系列官方说明](https://github.com/zai-org/GLM-5)；Moonshot AI，[Kimi-K3 配置](https://huggingface.co/moonshotai/Kimi-K3/blob/main/config.json)。用于区分主模型与混合分支，资料查阅于 2026-10-14。

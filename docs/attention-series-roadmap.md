@@ -4,9 +4,9 @@
 
 本路线依据用户确定的范围安排：聚焦模型设计中的注意力模块，先走完 DeepSeek 的公开注意力演进路线，再展开 GLM、Kimi、MiniMax 的其他设计。按知识依赖组织阅读顺序，在各篇中单独交代真实发布时间、研究分支和模型继承关系。
 
-写作遵循[文章写作规范](writing-guide.md)。以下标题和文件名为计划；已有篇目保持编号，未来新增资料在正式写作前重新核对。
+写作遵循[文章写作规范](writing-guide.md)。第 1—17 篇现均已有稿件；以下分阶段安排保留其问题与知识依赖，实际标题以稿件为准。已有篇目保持编号，未来增补资料在正式写作前重新核对。
 
-## 已有稿件：建立基础与 DeepSeek 起点
+## 已有稿件：注意力机制系列
 
 | 篇号 | 文章 | 已建立的知识 |
 |---|---|---|
@@ -15,17 +15,18 @@
 | 3 | [MLA](../ai-infra/attention-3-mla.md) | 潜在 KV 表示、矩阵吸收、解耦 RoPE |
 | 4 | [DSA](../ai-infra/attention-4-dsa.md) | 动态 token 选择、索引器训练、索引复用和适用边界 |
 | 5 | [CSA/HCA](../ai-infra/attention-5-csa-hca.md) | 重叠与非重叠的序列压缩、压缩条目选择、局部窗口与共享 KV 读取 |
-| 6 | [CSA2](../ai-infra/attention-6-csa2.md) | 详见文章中的问题、机制与分析 |
-| 7 | [DeepSeek-V4.1](../ai-infra/attention-7-deepseek-v41.md) | 详见文章中的问题、机制与分析 |
-| 8 | [NSA](../ai-infra/attention-8-nsa.md) | 详见文章中的问题、机制与分析 |
-| 9 | [GLM 与 IndexShare](../ai-infra/attention-9-glm-indexshare.md) | 详见文章中的问题、机制与分析 |
-| 10 | [MoBA](../ai-infra/attention-10-moba.md) | 详见文章中的问题、机制与分析 |
-| 11 | [MiniMax MSA](../ai-infra/attention-11-minimax-msa.md) | 详见文章中的问题、机制与分析 |
-| 12 | [线性注意力](../ai-infra/attention-12-linear-attention.md) | 详见文章中的问题、机制与分析 |
-| 13 | [Lightning Attention](../ai-infra/attention-13-lightning-attention.md) | 详见文章中的问题、机制与分析 |
-| 14 | [DeltaNet 与 Gated DeltaNet](../ai-infra/attention-14-gated-deltanet.md) | 详见文章中的问题、机制与分析 |
-| 15 | [KDA 与 Kimi 的混合注意力](../ai-infra/attention-15-kda.md) | 详见文章中的问题、机制与分析 |
-| 16 | [GLM-5.3-Flash](../ai-infra/attention-16-glm-hybrid.md) | 详见文章中的问题、机制与分析 |
+| 6 | [CSA2](../ai-infra/attention-6-csa2.md) | Full/Reindex/Reuse、主 KV 与选择共享、状态归属 |
+| 7 | [DeepSeek-V4.1](../ai-infra/attention-7-deepseek-v41.md) | CED 的全局来源、局部回放近似、层次化候选池 |
+| 8 | [NSA](../ai-infra/attention-8-nsa.md) | 摘要引导块选择、GQA 组内聚合、三路门控融合 |
+| 9 | [GLM 与 IndexShare](../ai-infra/attention-9-glm-indexshare.md) | GLM 分支、原生共享训练、来源布局与配置覆盖边界 |
+| 10 | [MoBA](../ai-infra/attention-10-moba.md) | 块均值路由、当前块因果性、统一归一化 |
+| 11 | [MiniMax MSA](../ai-infra/attention-11-minimax-msa.md) | 每组独立选块、块最大值、KL 对齐与梯度隔离 |
+| 12 | [线性注意力](../ai-infra/attention-12-linear-attention.md) | 核映射、外积写入、分母状态、因果递归与干扰 |
+| 13 | [Lightning Attention](../ai-infra/attention-13-lightning-attention.md) | 时间衰减、分块等价、MiniMax 7:1 混合与容量 |
+| 14 | [DeltaNet 与 Gated DeltaNet](../ai-infra/attention-14-gated-deltanet.md) | 读取误差、定向修正、遗忘顺序与更新稳定性 |
+| 15 | [KDA 与 Kimi 的混合注意力](../ai-infra/attention-15-kda.md) | 通道遗忘、DPLR、NoPE、Linear/K3 的实际层型 |
+| 16 | [GLM-5.3-Flash](../ai-infra/attention-16-glm-hybrid.md) | KDA/稀疏 MLA、IndexPool、地址展开与尾部补齐 |
+| 17 | [设计取舍](../ai-infra/attention-17-design-tradeoffs.md) | 四家分支时间线、统一容量/计算式与信息损失 |
 
 “已有稿件”只表示仓库中存在文章，不据此认定已经提交、推送或线上发布。
 
@@ -81,7 +82,7 @@
 
 第 9 篇承接已有的跨层共享知识，第 10、11 篇承接 NSA 的块选择知识。这个阶段讲清“选择和共享历史”的不同方式，随后再引入“把历史写入递归状态”。
 
-- **第 1—16 篇已有稿件，下一篇从第 17 篇开始**，按既定路线推进。
+- **第 1—17 篇均已有稿件，本轮既定路线已完成**；后续增补先核对公开资料。
 - **第 10 篇**：展开 MoBA（Mixture of Block Attention，混合块注意力）的块表示、内容路由、因果选择与输出计算。区分“论文报告已用于 Kimi 长上下文服务”和“某个公开模型确认内置该模块”。
 - **第 11 篇**：展开 MSA（MiniMax Sparse Attention）的 GQA 组、索引分支、块内打分聚合和主注意力；对照 DSA 与 MoBA 的共享范围和选择粒度。以 M2 系列 GQA 到 M3 的变化交代这一分支；01/M1 的线性混合设计在第 13 篇回顾，不能把整个 MiniMax 家族画成单向继承链。
 

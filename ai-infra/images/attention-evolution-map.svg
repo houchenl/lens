@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1220" height="990" viewBox="0 0 1220 990" role="img" aria-labelledby="title desc">
+  <title id="title">四家模型公开注意力分支时间线</title>
+  <desc id="desc">按二零二三至二零二四、二零二五和二零二六三个时期分列，分别展示 DeepSeek、GLM、Kimi、MiniMax 的公开注意力设计。虚线框表示研究方案或服务应用，不据此认定具体开放权重模型采用该结构。</desc>
+  <defs>
+    <style>
+      text{font-family:'Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#1e293b;font-size:17px}
+      .title{font-size:27px;font-weight:700}.head{font-size:21px;font-weight:700}.small{font-size:16px;fill:#475569}.family{font-size:22px;font-weight:700}.box{fill:#fff;stroke:#94a3b8;stroke-width:1.5}.research{fill:#fff7ed;stroke:#ea580c;stroke-width:1.5;stroke-dasharray:6 4}
+    </style>
+  </defs>
+  <rect width="1220" height="990" rx="16" fill="#f8fafc"/>
+  <text x="30" y="44" class="title">注意力设计的公开分支：时间交叉，机制可以组合</text>
+  <text x="30" y="76" class="small">按公开时期整理；相邻位置表示时间先后，不声明权重继承。资料截至 2026-10-14。</text>
+  <rect x="165" y="100" width="280" height="46" rx="8" fill="#e2e8f0"/><rect x="465" y="100" width="320" height="46" rx="8" fill="#e2e8f0"/><rect x="805" y="100" width="385" height="46" rx="8" fill="#e2e8f0"/>
+  <text x="185" y="130" class="head">2023—2024</text><text x="485" y="130" class="head">2025</text><text x="825" y="130" class="head">2026</text>
+  <g stroke="#cbd5e1" stroke-dasharray="4 5"><path d="M 455 155 V 930"/><path d="M 795 155 V 930"/></g>
+  <rect x="20" y="164" width="1170" height="172" rx="12" fill="#eff6ff"/>
+  <text x="32" y="203" class="family">DeepSeek</text>
+  <rect x="175" y="182" width="260" height="65" rx="8" class="box"/><text x="190" y="209">V2 / V3</text><text x="190" y="233" class="small">MLA：逐位置潜在表示</text>
+  <rect x="475" y="182" width="300" height="65" rx="8" class="box"/><text x="490" y="209">V3.2-Exp / V3.2：DSA</text><text x="490" y="233" class="small">动态选择历史 token</text>
+  <rect x="475" y="261" width="300" height="56" rx="8" class="research"/><text x="490" y="286">NSA：研究支线</text><text x="490" y="307" class="small">压缩、块选择、窗口三路融合</text>
+  <rect x="815" y="182" width="365" height="65" rx="8" class="box"/><text x="830" y="209">V4：CSA / HCA</text><text x="830" y="233" class="small">沿历史序列压缩与混合读取</text>
+  <rect x="815" y="261" width="365" height="56" rx="8" class="box"/><text x="830" y="286">V4.1：CSA2 / CED</text><text x="830" y="307" class="small">跨层共享、来源重构与层次索引</text>
+  <rect x="20" y="352" width="1170" height="190" rx="12" fill="#ecfdf5"/>
+  <text x="32" y="391" class="family">GLM</text>
+  <rect x="175" y="370" width="260" height="67" rx="8" class="box"/><text x="190" y="397">ChatGLM 系列基础</text><text x="190" y="423" class="small">多头、分组 KV 共享</text>
+  <rect x="475" y="370" width="300" height="67" rx="8" class="box"/><text x="490" y="397">GLM-4.x 主线</text><text x="490" y="423" class="small">GQA</text>
+  <rect x="815" y="370" width="365" height="41" rx="8" class="box"/><text x="830" y="397">4.7-Flash：MLA 分支</text>
+  <rect x="815" y="421" width="365" height="43" rx="8" class="box"/><text x="830" y="449">5 → 5.2 / 5.3：DSA + IndexShare</text>
+  <rect x="815" y="474" width="365" height="49" rx="8" class="box"/><text x="830" y="495">5.3-Flash：KDA + 稀疏 MLA</text><text x="830" y="516" class="small">IndexPool 压缩索引候选</text>
+  <rect x="20" y="558" width="1170" height="190" rx="12" fill="#faf5ff"/>
+  <text x="32" y="597" class="family">Kimi</text>
+  <text x="185" y="603" class="small">未在本图推断补齐</text><text x="185" y="629" class="small">早期闭源服务的结构</text>
+  <rect x="475" y="576" width="300" height="45" rx="8" class="research"/><text x="490" y="605">MoBA：研究与服务应用</text>
+  <rect x="475" y="631" width="300" height="42" rx="8" class="box"/><text x="490" y="659">K2 / Thinking：MLA</text>
+  <rect x="475" y="683" width="300" height="45" rx="8" class="box"/><text x="490" y="712">Kimi Linear：KDA + MLA</text>
+  <rect x="815" y="576" width="365" height="57" rx="8" class="box"/><text x="830" y="610">K2.5：MLA 分支延续</text>
+  <rect x="815" y="647" width="365" height="81" rx="8" class="box"/><text x="830" y="678">K3：KDA + Gated MLA</text><text x="830" y="708" class="small">NoPE；AttnRes 负责深度残差融合</text>
+  <rect x="20" y="764" width="1170" height="164" rx="12" fill="#fff7ed"/>
+  <text x="32" y="803" class="family">MiniMax</text>
+  <text x="185" y="812" class="small">本图从公开模型</text><text x="185" y="838" class="small">01 系列开始梳理</text>
+  <rect x="475" y="782" width="300" height="65" rx="8" class="box"/><text x="490" y="808">Text-01 / M1</text><text x="490" y="834" class="small">Lightning 与 softmax 混合</text>
+  <rect x="475" y="859" width="300" height="49" rx="8" class="box"/><text x="490" y="890">M2：GQA 分支</text>
+  <rect x="815" y="782" width="365" height="49" rx="8" class="box"/><text x="830" y="813">M2 系列：GQA</text>
+  <rect x="815" y="843" width="365" height="65" rx="8" class="box"/><text x="830" y="870">M3：MSA</text><text x="830" y="896" class="small">每个 GQA 组独立选择连续块</text>
+  <text x="30" y="965" class="small">实线框：公开模型结构　｜　橙色虚线框：研究或服务应用，不自动归属到某个开放权重模型。</text>
+</svg>
