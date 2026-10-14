@@ -161,6 +161,8 @@ MoBA 论文发表于 2025 年初，报告用于 Kimi 长上下文服务；这不
 
 KDA 将“如何保留旧状态”细化到通道，混合 MLA 又补充显式历史读取。下一篇讨论 **GLM-5.3-Flash**：它把 KDA 与稀疏 MLA 结合，让固定状态与可检索历史在另一种层型比例下协作。
 
+继续阅读：[注意力机制-16 GLM-5.3-Flash](/ai-infra/attention-16-glm-hybrid)。
+
 ## 参考资料
 
 1. Kimi Team，[Kimi Linear: An Expressive, Efficient Attention Architecture](https://arxiv.org/abs/2510.26692)，2025。重点见 §3 的向量遗忘与 §4 的完整层和 NoPE。
