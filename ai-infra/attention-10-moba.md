@@ -157,6 +157,8 @@ MoBA 不增加模型参数，便于在全注意力与稀疏注意力之间切换
 
 MoBA 把“找区域”和“读细节”分开，代价是粗粒度路由误差。下一篇的 **MiniMax MSA** 同样选择块，却用专门索引分支与 GQA 组级选择处理相关性，适合继续比较路由分数与共享范围。
 
+继续阅读：[注意力机制-11 MiniMax MSA](/ai-infra/attention-11-minimax-msa)。
+
 ## 参考资料
 
 1. Lu et al.，[MoBA: Mixture of Block Attention for Long-Context LLMs](https://arxiv.org/abs/2502.13189)，2025。重点见 §2 的路由和因果性、§3.2 的混合训练。
