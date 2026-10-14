@@ -182,6 +182,8 @@ for t, (key, query, value) in enumerate(zip(keys, queries, values)):
 
 本篇建立了最基础的“累加写入—归一化读取”。下一篇讨论 **Lightning Attention 与 MiniMax-01/M1**，引入时间衰减和线性/softmax 混合；随后 DeltaNet 将把累加写入改为基于读取误差的定向修正。
 
+继续阅读：[注意力机制-13 Lightning Attention](/ai-infra/attention-13-lightning-attention)。
+
 ## 参考资料
 
 1. Katharopoulos et al.，[Transformers are RNNs: Fast Autoregressive Transformers with Linear Attention](https://proceedings.mlr.press/v119/katharopoulos20a.html)，ICML 2020；[论文 HTML](https://arxiv.org/html/2006.16236)。重点见 §3.2 的核映射、§3.3 的因果前缀与 §3.4 的递归形式。
