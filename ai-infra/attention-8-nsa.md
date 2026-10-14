@@ -179,6 +179,8 @@ $$
 
 NSA 补齐了“摘要引导块级细读”的设计思路。下一篇转向 **GLM 的稀疏注意力与原生 IndexShare**，比较另一个模型家族如何利用跨层选择冗余。
 
+继续阅读：[注意力机制-9 GLM 与 IndexShare](/ai-infra/attention-9-glm-indexshare)。
+
 ## 参考资料
 
 1. Yuan et al.，[Native Sparse Attention: Hardware-Aligned and Natively Trainable Sparse Attention](https://arxiv.org/abs/2502.11089)，2025。本文的算法、分支融合和实验配置均以该研究为对象。
