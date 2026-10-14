@@ -33,6 +33,57 @@
   --vp-home-hero-name-background: linear-gradient(120deg, #a8d5c4 30%, #4a9a82);
 }
 
+/* ---------- 文章侧边栏 ---------- */
+
+.VPSidebar .VPSidebarItem.is-link > .item > .link {
+  margin: 2px 0;
+  padding: 6px 10px;
+  border-radius: 6px;
+  box-shadow: inset 3px 0 0 transparent;
+  transition:
+    background-color 0.18s ease,
+    box-shadow 0.18s ease,
+    transform 0.18s ease;
+}
+
+.VPSidebar .VPSidebarItem.is-link > .item > .link > .text {
+  padding: 0;
+}
+
+.VPSidebar .VPSidebarItem.is-active > .item > .link {
+  background-color: var(--vp-c-brand-soft);
+  box-shadow: inset 3px 0 0 var(--vp-c-brand-1);
+}
+
+.VPSidebar .VPSidebarItem.is-active > .item > .link > .text {
+  color: var(--vp-c-brand-1);
+  font-weight: 600;
+}
+
+.VPSidebar .VPSidebarItem.is-link > .item > .link:focus-visible {
+  outline: 2px solid var(--vp-c-brand-1);
+  outline-offset: 2px;
+}
+
+@media (hover: hover) {
+  .VPSidebar .VPSidebarItem.is-link > .item > .link:hover {
+    background-color: var(--vp-c-brand-soft);
+  }
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .VPSidebar .VPSidebarItem.is-link > .item > .link:hover {
+    transform: translateX(3px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .VPSidebar .VPSidebarItem.is-link > .item > .link,
+  .VPSidebar .VPSidebarItem.is-link > .item > .link > .text {
+    transition: none;
+  }
+}
+
 /* ---------- 正文排版（参考公众号阅读体验） ---------- */
 
 .vp-doc {

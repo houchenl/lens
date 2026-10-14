@@ -1,6 +1,6 @@
 ---
 title: 注意力机制-9 GLM 与 IndexShare
-date: 2026-10-14
+date: 2026-10-14T16:25:20+08:00
 description: 从 GLM 的分组 KV、MLA 和 DSA 分支出发，深入解释 GLM-5.2/5.3 的原生 IndexShare：跨层共享地址如何训练、为何不等于共享主 KV，以及怎样读懂 indexer_types、index_topk_freq 与架构类名。
 ---
 

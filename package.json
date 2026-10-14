@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "test": "node --test .vitepress/utils/post-order.test.mjs",
     "dev": "vitepress dev",
     "build": "vitepress build",
     "preview": "vitepress preview"

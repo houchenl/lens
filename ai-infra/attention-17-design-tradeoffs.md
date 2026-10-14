@@ -1,6 +1,6 @@
 ---
 title: 注意力机制-17 设计取舍
-date: 2026-10-14
+date: 2026-10-14T17:00:50+08:00
 description: 用历史表示、访问粒度、状态更新与层间关系统一比较 MLA、DSA、CSA/HCA、块稀疏与 KDA，梳理 DeepSeek、GLM、Kimi、MiniMax 的公开分支时间线，并建立容量、计算和信息损失的分析框架。
 ---
 

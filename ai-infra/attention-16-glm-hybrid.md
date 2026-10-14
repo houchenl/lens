@@ -1,6 +1,6 @@
 ---
 title: 注意力机制-16 GLM-5.3-Flash
-date: 2026-10-14
+date: 2026-10-14T16:52:16+08:00
 description: 解析 GLM-5.3-Flash 的 KDA 与稀疏 MLA 混合结构，推导 IndexPool 的逐通道池化、完整组选择、原始地址展开与尾部补齐，区分 NoPE、索引共享和状态容量的不同作用。
 ---
 

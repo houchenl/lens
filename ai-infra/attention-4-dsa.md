@@ -1,6 +1,6 @@
 ---
 title: 注意力机制-4 DSA
-date: 2026-10-14
+date: 2026-10-14T16:10:25+08:00
 description: 从长上下文注意力的访问成本出发，推导 DSA 的 Lightning Indexer、动态 Top-K 选择与 MLA 聚合，分析训练、复杂度和缓存边界，再解释 IndexCache、GLM 的索引共享，以及 index_topk_freq=8 的适用条件与验证方法。
 ---
 

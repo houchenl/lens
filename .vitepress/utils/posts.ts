@@ -1,6 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { comparePosts } from './post-order.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..')
 
@@ -20,7 +21,7 @@ export interface Post {
   text: string
   /** 站内路径，如 /think/hello */
   link: string
-  /** frontmatter date，用于排序与展示，可为空 */
+  /** frontmatter 发布时间（含秒和时区，兼容旧日期），可为空 */
   date: string
   /** frontmatter description，可为空 */
   description: string
@@ -41,7 +42,7 @@ function parseFrontmatter(src: string): { title: string; date: string; descripti
   return { title: get('title') || heading, date: get('date'), description: get('description') }
 }
 
-/** 扫描所有栏目目录，返回按 date 降序（无 date 按 mtime 降序）排列的文章列表 */
+/** 扫描所有栏目目录，按发布时间倒序排列；无日期的旧页面放在末尾 */
 export function getPosts(): Post[] {
   const posts: Post[] = []
   for (const { dir } of SECTIONS) {
@@ -61,11 +62,7 @@ export function getPosts(): Post[] {
       })
     }
   }
-  return posts.sort((a, b) =>
-    a.date || b.date
-      ? (b.date || '').localeCompare(a.date || '')
-      : b.mtime - a.mtime,
-  )
+  return posts.sort(comparePosts)
 }
 
 /** 生成某个栏目的侧边栏分组 */

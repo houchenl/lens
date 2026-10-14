@@ -1,6 +1,6 @@
 ---
 title: KVCache卸载-1 LMCache
-date: 2026-10-14
+date: 2026-10-14T13:48:41+08:00
 description: 《KVCache卸载》系列第一篇。从跨请求复用出发，拆解 LMCache 的分块匹配、外部存储、vLLM Connector 与回载流程，再用成本模型和可复核的实验步骤解释卸载何时值得做。
 ---
 

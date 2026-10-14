@@ -1,6 +1,6 @@
 ---
 title: 注意力机制-6 CSA2
-date: 2026-10-14
+date: 2026-10-14T16:14:28+08:00
 description: 从层内压缩走向跨层共享。本文解释 CSA2 的 Full、Reindex、Reuse 三种模式，推导主 KV、索引 key 与 Top-K 的状态关系，分析压缩器简化、缓存归属、训练适配及其与 IndexCache 的区别。
 ---
 

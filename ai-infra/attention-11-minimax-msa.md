@@ -1,6 +1,6 @@
 ---
 title: 注意力机制-11 MiniMax MSA
-date: 2026-10-14
+date: 2026-10-14T16:31:41+08:00
 description: 深入解析 MiniMax Sparse Attention 的组级索引 query、共享索引 key、块内最大值选择和精确块内注意力，推导 KL 训练与梯度隔离，并以 M3 配置分析读取预算、FLOPs 与缓存边界。
 ---
 

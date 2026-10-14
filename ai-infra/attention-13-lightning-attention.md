@@ -1,6 +1,6 @@
 ---
 title: 注意力机制-13 Lightning Attention
-date: 2026-10-14
+date: 2026-10-14T16:38:54+08:00
 description: 从带衰减的外积记忆解释 Lightning Attention，推导跨块状态与块内计算的关系，再对照 MiniMax-Text-01/M1 的 7:1 混合结构，分析输出门控、检索能力、状态容量与整体复杂度。
 ---
 

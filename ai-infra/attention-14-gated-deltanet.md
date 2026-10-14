@@ -1,6 +1,6 @@
 ---
 title: 注意力机制-14 DeltaNet 与 Gated DeltaNet
-date: 2026-10-14
+date: 2026-10-14T16:42:42+08:00
 description: 从重复 key 的写入冲突出发，推导 DeltaNet 的误差修正、归一化条件与方向选择，再展开 Gated DeltaNet 的遗忘顺序、状态转移和分块训练，验证覆盖、干扰与重置的具体行为。
 ---
 

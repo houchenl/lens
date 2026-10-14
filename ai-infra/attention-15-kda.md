@@ -1,6 +1,6 @@
 ---
 title: 注意力机制-15 KDA 与 Kimi 的混合注意力
-date: 2026-10-14
+date: 2026-10-14T16:48:02+08:00
 description: 从 Gated DeltaNet 的标量遗忘推导 KDA 的按 key 通道遗忘、DPLR 转移与误差修正，对照 Kimi Linear 和 K3 的实际层型，解释 NoPE、输出门控、全局 MLA 与固定状态的分工。
 ---
 

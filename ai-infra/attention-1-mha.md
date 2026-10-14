@@ -1,6 +1,6 @@
 ---
 title: 注意力机制-1 MHA
-date: 2026-10-12
+date: 2026-10-12T23:31:13+08:00
 description: 这是一个关于注意力机制的系列文章。作为开篇，我们从最经典的形式讲起：decoder-only LLM 中基于 MHA（Multi-Head Attention，多头注意力）的注意力模块。不堆术语、不跳步骤，把从公式到显存的每个细节讲透。
 ---
 

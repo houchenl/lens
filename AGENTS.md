@@ -12,7 +12,7 @@
 
 ## 项目实现
 
-- 文章使用 Markdown，提供 `title`、`date`、`description` frontmatter。
+- 文章使用 Markdown，提供 `title`、`date`、`description` frontmatter；`date` 使用带时区的秒级发布时间，如 `2026-10-14T17:00:50+08:00`，保证同日文章按时间倒序排列。
 - 数学公式使用已有的 VitePress MathJax 支持；保持公式、符号解释和适用条件对应。
 - 栏目侧边栏、顶部栏目入口及首页近期笔记由 `.vitepress/utils/posts.ts`、`.vitepress/data/posts.data.ts` 自动生成。
 - 写作规范等维护文档放在 `docs/`；`AGENTS.md`、`README.md` 和 `docs/` 已通过 `srcExclude` 排除在站点页面之外。
